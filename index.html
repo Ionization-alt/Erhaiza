@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A letter for Erha</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap">
+<style>
+:root{--desk:#c9d3cf;--back:#aebbd4;--el:#c3cee3;--er:#bcc8df;--eb:#d2dbec;--flap:#cdd8ec;--flapin:#9fb0cf;--paper:#fcfbf7;--ink:#26335e;--to:#26335e;--rule:rgba(110,140,200,.32);--marg:rgba(200,100,115,.45);--hint:#41504c;--seal:#9c2b48;--btn:#26335e;--btntxt:#fcfbf7;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--desk:#12171b;--back:#2e3858;--el:#3b476b;--er:#36426a;--eb:#46537a;--flap:#44527c;--flapin:#2a3452;--paper:#ece9e0;--to:#dbe3f7;--hint:#9aa8a4;--btn:#ece9e0;--btntxt:#12171b;color-scheme:dark}}
+:root[data-theme="dark"]{--desk:#12171b;--back:#2e3858;--el:#3b476b;--er:#36426a;--eb:#46537a;--flap:#44527c;--flapin:#2a3452;--paper:#ece9e0;--to:#dbe3f7;--hint:#9aa8a4;--btn:#ece9e0;--btntxt:#12171b;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--desk);font-family:'Caveat','Bradley Hand','Segoe Print',cursive;overflow-x:hidden}
+.stage{min-height:100svh;display:flex;flex-direction:column;align-items:center;padding:clamp(190px,30svh,300px) 0 40px}
+.envelope{position:relative;width:min(88vw,400px);aspect-ratio:1.55;perspective:900px;cursor:pointer;outline-offset:10px;border-radius:3px}
+.back{position:absolute;inset:0;background:var(--back);border-radius:3px;box-shadow:0 22px 40px rgba(0,0,0,.25),0 2px 4px rgba(0,0,0,.2)}
+.pocket{position:absolute;inset:0;width:100%;height:100%;z-index:3;display:block}
+.flap{position:absolute;left:0;top:0;width:100%;height:56.25%;transform-origin:top;clip-path:polygon(0 0,100% 0,50% 100%);background:var(--flap);z-index:5}
+.open .flap{animation:flap .9s cubic-bezier(.45,0,.2,1) forwards}
+@keyframes flap{0%{transform:rotateX(0);z-index:5}49%{z-index:5}50%{transform:rotateX(90deg);z-index:1}100%{transform:rotateX(180deg);z-index:1;background:var(--flapin)}}
+.to{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);z-index:4;font-size:30px;font-weight:600;color:var(--to);opacity:.85;white-space:nowrap}
+.letter{position:absolute;left:0;top:0;z-index:2;width:min(440px,92vw);transform-origin:0 0;padding:34px 26px 40px 58px;color:var(--ink);font-size:25px;line-height:32px;border-radius:3px;background-color:var(--paper);background-image:linear-gradient(90deg,transparent 46px,var(--marg) 46px,var(--marg) 48px,transparent 48px),linear-gradient(transparent 31px,var(--rule) 31px);background-size:100% 100%,100% 32px;background-position:0 0,0 34px;box-shadow:0 1px 2px rgba(0,0,0,.25),0 12px 30px rgba(0,0,0,.2)}
+.letter p{margin:0 0 32px}
+.letter p:last-child{margin-bottom:0}
+.letter.read{position:relative;flex:none;margin:auto 0;z-index:1}
+.hint{margin:34px 0 0;font-size:24px;color:var(--hint);min-height:32px;text-align:center}
+.reader{position:fixed;inset:0;z-index:20;overflow:auto;display:flex;flex-direction:column;align-items:center;padding:calc(5svh + env(safe-area-inset-top,0px)) 16px calc(5svh + env(safe-area-inset-bottom,0px));pointer-events:none}
+.reader.on{pointer-events:auto}
+.reader::before{content:"";position:fixed;inset:0;background:var(--desk);opacity:0;transition:opacity 1.1s cubic-bezier(.45,0,.2,1)}
+.reader.on::before{opacity:.94}
+.close{flex:none;position:relative;z-index:1;margin-top:22px;padding:10px 22px;border:0;border-radius:99px;background:var(--btn);color:var(--btntxt);font:600 22px 'Caveat','Bradley Hand',cursive;cursor:pointer;opacity:0;transition:opacity .5s .9s}
+.reader.on .close{opacity:1}
+:focus-visible{outline:3px solid #5b7bd6}
+@media (prefers-reduced-motion:reduce){.open .flap{animation-duration:.01s}}
+:root{--desk:linear-gradient(160deg,#ffe0ea 0%,#f1e0ff 52%,#d6ebff 100%);--back:#f4b8cc;--el:#f9cfdc;--er:#f6c6d6;--eb:#fddbe5;--flap:#fbd0dd;--flapin:#e8a7bd;--paper:#fffdfb;--ink:#5a3a55;--to:#a34a6d;--rule:rgba(214,150,180,.38);--marg:rgba(240,130,160,.5);--hint:#8a5a78;--btn:#d9658f;--btntxt:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--desk:linear-gradient(160deg,#2c1832 0%,#262040 52%,#1a2b42 100%);--back:#6b3d5a;--el:#85506f;--er:#7d4a68;--eb:#94597a;--flap:#8f5578;--flapin:#5e3350;--paper:#f8eee9;--ink:#5a3a55;--to:#ffd6e5;--hint:#dbb7cb;--btn:#ffd6e5;--btntxt:#3a1f33}}
+:root[data-theme="dark"]{--desk:linear-gradient(160deg,#2c1832 0%,#262040 52%,#1a2b42 100%);--back:#6b3d5a;--el:#85506f;--er:#7d4a68;--eb:#94597a;--flap:#8f5578;--flapin:#5e3350;--paper:#f8eee9;--ink:#5a3a55;--to:#ffd6e5;--hint:#dbb7cb;--btn:#ffd6e5;--btntxt:#3a1f33}
+body{background-attachment:fixed;background-repeat:no-repeat}
+.bunny{position:absolute;left:50%;bottom:27%;width:50px;transform:translateX(-50%);z-index:4}
+.lb{position:absolute;top:12px;right:14px;width:46px}
+.deco{position:fixed;z-index:-1;pointer-events:none;opacity:.55}
+.d1{left:-14px;bottom:18px;width:120px;transform:rotate(-12deg)}
+.d2{right:10px;top:calc(18px + env(safe-area-inset-top,0px));width:74px;transform:rotate(10deg)}
+.d3{right:8%;bottom:30px;width:56px;opacity:.4}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="bunny" viewBox="0 0 100 110"><g stroke="#e8a3bd" stroke-width="3"><ellipse cx="36" cy="30" rx="11" ry="26" fill="#fff" transform="rotate(-8 36 50)"/><ellipse cx="64" cy="30" rx="11" ry="26" fill="#fff" transform="rotate(8 64 50)"/><ellipse cx="50" cy="74" rx="37" ry="31" fill="#fff"/></g><ellipse cx="36" cy="32" rx="5" ry="16" fill="#ffc2d6" transform="rotate(-8 36 50)"/><ellipse cx="64" cy="32" rx="5" ry="16" fill="#ffc2d6" transform="rotate(8 64 50)"/><circle cx="37" cy="72" r="4" fill="#4a2c42"/><circle cx="63" cy="72" r="4" fill="#4a2c42"/><ellipse cx="27" cy="83" rx="6" ry="4" fill="#ffb3c9"/><ellipse cx="73" cy="83" rx="6" ry="4" fill="#ffb3c9"/><path d="M46 79q4 4 8 0z" fill="#ff8fb0"/><path d="M50 82v3M50 85q-4 4-8 1M50 85q4 4 8 1" stroke="#4a2c42" stroke-width="2" fill="none" stroke-linecap="round"/></symbol></defs></svg>
+<svg class="deco d1" viewBox="0 0 100 110" aria-hidden="true"><use href="#bunny"/></svg>
+<svg class="deco d2" viewBox="0 0 100 110" aria-hidden="true"><use href="#bunny"/></svg>
+<svg class="deco d3" viewBox="0 0 100 110" aria-hidden="true"><use href="#bunny"/></svg>
+<main class="stage">
+  <div class="envelope" id="env" role="button" tabindex="0" aria-label="Open the envelope">
+    <div class="back"></div>
+    <div class="flap"></div>
+    <article class="letter" id="letter">
+      <svg class="lb" viewBox="0 0 100 110" aria-hidden="true"><use href="#bunny"/></svg>
+      <p>Dear Erha,</p>
+      <p>I just want to remind you not to be too hard on yourself, especially when it comes to academics. I know how much you want to do well, but please don’t pressure yourself too much. It’s okay to make mistakes and take breaks. You don’t always have to be perfect.</p>
+      <p>Always remember to take care of yourself, eat on time, and get enough rest. Your efforts matter, and you should be proud of yourself, too.</p>
+      <p>I’m always rooting for you! And please don’t hesitate to ask me for help whenever you need it, or if you ever want some company. I’d be happy to keep you company.</p>
+      <p>Take care always!</p>
+    </article>
+    <svg class="pocket" viewBox="0 0 100 64" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(0,0,0,.1)" stroke-width="1" vector-effect="non-scaling-stroke">
+        <polygon points="0,0 50,36 0,64" fill="var(--el)" vector-effect="non-scaling-stroke"/>
+        <polygon points="100,0 50,36 100,64" fill="var(--er)" vector-effect="non-scaling-stroke"/>
+        <polygon points="0,64 50,36 100,64" fill="var(--eb)" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
+    <svg class="bunny" viewBox="0 0 100 110" aria-hidden="true"><use href="#bunny"/></svg>
+    <span class="to">For Erha</span>
+  </div>
+  <p class="hint" id="hint">Tap the envelope to open it</p>
+</main>
+<div class="reader" id="reader"><button class="close" id="close" type="button">Fold it back</button></div>
+<script>
+const env=document.getElementById('env'),letter=document.getElementById('letter'),reader=document.getElementById('reader'),closeBtn=document.getElementById('close'),hint=document.getElementById('hint');
+let state=0;
+function measure(){const EW=env.offsetWidth,EH=env.offsetHeight,LW=letter.offsetWidth,HL=letter.offsetHeight,k=.84*EW/LW;return{EW,EH,LW,HL,k,vis:.9*EH/k}}
+function place(y){const g=measure();letter.style.transform='translate('+(g.EW-g.LW*g.k)/2+'px,'+y*g.EH+'px) scale('+g.k+')';letter.style.clipPath='inset(0 0 '+Math.max(0,g.HL-g.vis)+'px 0)'}
+function open(){
+  state=1;env.classList.add('open');hint.textContent='';
+  setTimeout(()=>{letter.style.transition='transform 1.1s cubic-bezier(.45,0,.2,1)';place(-.8)},850);
+  setTimeout(unfold,2500);
+}
+function unfold(){
+  state=2;
+  const g=measure(),r=letter.getBoundingClientRect();
+  letter.style.transition='none';letter.style.transform='none';letter.style.clipPath='none';
+  reader.insertBefore(letter,closeBtn);letter.classList.add('read');reader.classList.add('on');
+  const t=letter.getBoundingClientRect(),s=r.width/t.width;
+  letter.style.transform='translate('+(r.left-t.left)+'px,'+(r.top-t.top)+'px) scale('+s+')';
+  letter.style.clipPath='inset(0 0 '+Math.max(0,t.height-g.vis)+'px 0)';
+  letter.offsetWidth;
+  letter.style.transition='transform 1.1s cubic-bezier(.45,0,.2,1),clip-path 1.1s cubic-bezier(.45,0,.2,1)';
+  letter.style.transform='none';letter.style.clipPath='inset(0 0 0 0)';
+}
+function fold(){
+  reader.classList.remove('on');letter.style.transition='opacity .4s';letter.style.opacity=0;
+  setTimeout(()=>{
+    env.insertBefore(letter,env.querySelector('.pocket'));letter.classList.remove('read');
+    letter.style.transition='none';letter.style.opacity=1;place(.06);
+    env.classList.remove('open');hint.textContent='Tap the envelope to open it';state=0;
+  },450);
+}
+env.addEventListener('click',()=>{if(state===0)open()});
+env.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&state===0){e.preventDefault();open()}});
+closeBtn.addEventListener('click',fold);
+addEventListener('resize',()=>{if(state===0)place(.06)});
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{if(state===0)place(.06)});
+place(.06);
+</script>
+</body>
+</html>
